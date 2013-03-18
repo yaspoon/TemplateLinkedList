@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1363492216 source:/home/brock/curtin/2013/ami300/code/LinkedList/main.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	"LinkedList.h"
+
+1363448447 source:/home/brock/curtin/2013/ami300/code/LinkedList/src/GraphData.cpp
+	"GraphData.h"
+
+1363448425 /home/brock/curtin/2013/ami300/code/LinkedList/include/GraphData.h
+
+1363491389 source:/home/brock/curtin/2013/ami300/code/LinkedList/src/LinkedListNode.cpp
+	"LinkedListNode.h"
+
+1363490878 /home/brock/curtin/2013/ami300/code/LinkedList/include/LinkedListNode.h
+	"GraphData.h"
+	<algorithm>
+
+1363494110 source:/home/brock/curtin/2013/ami300/code/LinkedList/src/LinkedList.cpp
+	"LinkedList.h"
+	<iostream>
+	<fstream>
+	<vector>
+	<cstdlib>
+	<string>
+	<sstream>
+
+1363491471 /home/brock/curtin/2013/ami300/code/LinkedList/include/LinkedList.h
+	"LinkedListNode.h"
+
