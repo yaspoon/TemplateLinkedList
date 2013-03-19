@@ -7,6 +7,7 @@ LinkedListNode::LinkedListNode()
 
 LinkedListNode::LinkedListNode(GraphData copyEdge)
 {
+    next = NULL;
     edge.copyEdge(copyEdge);
 }
 
