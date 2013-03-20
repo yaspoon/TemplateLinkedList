@@ -4,22 +4,46 @@
 #include "GraphData.h"
 #include <algorithm>
 
-
+template <class T>
 class LinkedListNode
 {
     public:
-        LinkedListNode();
-        LinkedListNode(GraphData copyEdge);
-        virtual ~LinkedListNode();
+        LinkedListNode()
+        {
+            next = NULL;
+        }
 
-        GraphData getEdge();
-        LinkedListNode *getNext();
+        LinkedListNode(T nodeData)
+        {
+            next = NULL;
+            T *tmp = new T(nodeData);
+            data = tmp;
+        }
 
-        void setNext(LinkedListNode *node);
+        ~LinkedListNode()
+        {
+
+        }
+
+        T getData()
+        {
+            T tmp(*data);
+            return tmp;
+        }
+
+        LinkedListNode *getNext()
+        {
+            return next;
+        }
+
+        void setNext(LinkedListNode *node)
+        {
+            next = node;
+        }
     protected:
     private:
         LinkedListNode *next;
-        GraphData edge;
+        T *data;
 
 };
 

@@ -1,85 +1,10 @@
 #include "LinkedList.h"
 
-#include <iostream>
-#include <fstream>
 #include <vector>
 #include <cstdlib>
-#include <string>
-#include <sstream>
 
-LinkedList::LinkedList()
-{
-    head = NULL;
-    count = 0;
-}
-
-LinkedList::~LinkedList()
-{
-    int i = 0;
-    LinkedListNode* currentNode = head;
-
-    for(i = 0; i < count; i++)
-    {
-            LinkedListNode* temp = currentNode;
-            currentNode = currentNode->getNext();
-
-            delete temp;
-    }
-}
-
-void LinkedList::pushEdgeFront(int vertex1, int vertex2, int weight)
-{
-    GraphData edge;
-    edge.setVertex1(vertex1);
-    edge.setVertex2(vertex2);
-    edge.setWeigth(weight);
-
-    pushFront(edge);
-}
-
-void LinkedList::pushEdgeBack(int vertex1, int vertex2, int weight)
-{
-    GraphData edge;
-    edge.setVertex1(vertex1);
-    edge.setVertex2(vertex2);
-    edge.setWeigth(weight);
-
-    pushBack(edge);
-}
-
-GraphData LinkedList::popEdgeFront()
-{
-    LinkedListNode* currentHead = popNodeFront();
-
-    GraphData retEdge;
-
-    if(currentHead != NULL)
-    {
-        retEdge.copyEdge(currentHead->getEdge());
-    }
-
-    delete currentHead;
-
-    return retEdge;
-}
-
-GraphData LinkedList::popEdgeBack()
-{
-    LinkedListNode *currentTail = popNodeBack();
-
-    GraphData retEdge;
-
-    if(currentTail != NULL) //there was something left in the list
-    {
-        retEdge.copyEdge(currentTail->getEdge());   //Copy the returned nodes data into out edge to return
-    }
-
-    delete currentTail;
-
-    return retEdge;
-}
-
-void LinkedList::pushFront(GraphData newEdge)
+template <class T>
+void LinkedList<T>::pushFront(T newEdge)
 {
     LinkedListNode *newNode = new LinkedListNode(newEdge);
 
@@ -96,7 +21,8 @@ void LinkedList::pushFront(GraphData newEdge)
     count += 1;
 }
 
-void LinkedList::pushBack(GraphData newEdge)
+template <class T>
+void LinkedList<T>::pushBack(T newEdge)
 {
     LinkedListNode *newNode = new LinkedListNode(newEdge);
 
@@ -121,7 +47,20 @@ void LinkedList::pushBack(GraphData newEdge)
     count += 1;
 }
 
-LinkedListNode *LinkedList::popNodeFront()
+template <class T>
+T LinkedList<T>::popFront()
+{
+
+}
+
+template <class T>
+T LinkedList<T>::popBack()
+{
+
+}
+
+template <class T>
+LinkedListNode *LinkedList<T>::popNodeFront()
 {
     LinkedListNode *node = NULL;
 
@@ -135,12 +74,18 @@ LinkedListNode *LinkedList::popNodeFront()
     return node;
 }
 
-LinkedListNode *LinkedList::popNodeBack()
+template <class T>
+LinkedListNode *LinkedList<T>::popNodeBack()
 {
 
     LinkedListNode *node = NULL;
 
-    if( count > 0)      //if this gets to below zero we are in serious trouble and should probably just abort anyway :/
+    if(count == 1)
+    {
+        node = head;
+        count -= 1;
+    }
+    else if(count > 0)      //if this gets to below zero we are in serious trouble and should probably just abort anyway :/
     {
         LinkedListNode *lastNode = NULL;
         node = head;
@@ -150,15 +95,13 @@ LinkedListNode *LinkedList::popNodeBack()
             lastNode = node;
             node = node->getNext();
         }
-        count -= 1;
-        lastNode->setNext(NULL);
-    }
 
     return node;
 
 }
 
-bool LinkedList::isEmpty()
+template <class T>
+bool LinkedList<T>::isEmpty()
 {
     bool retVal = true;
 
@@ -171,38 +114,11 @@ bool LinkedList::isEmpty()
 
 
 }
-
-void LinkedList::readList(const char* filepath)
-{
-    std::ifstream listFile;
-    listFile.open(filepath, std::ios::in);
-
-    if(listFile.is_open())
-    {
-        while( !listFile.eof())
-        {
-            std::string line;
-            std::getline(listFile, line); //Get a line of the input file;
-
-            std::stringstream convert(line);
-
-            int vertex1;
-            int vertex2;
-            int weight;
-
-            convert >> vertex1;
-
-            convert >> vertex2;
-
-            convert >> weight;
-
-            pushEdgeBack(vertex1, vertex2, weight);
-
-        }
-        listFile.close();
+        count -= 1;
+        lastNode->setNext(NULL);
     }
-    else
-    {
-        std::cout << "Failed to open file\n";
-    }
+
+    return node;
+
 }
+

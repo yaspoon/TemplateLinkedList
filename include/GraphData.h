@@ -6,6 +6,7 @@ class GraphData
 {
     public:
         GraphData();
+        GraphData(int inVertex1, int inVertex2, int inWeight);
         virtual ~GraphData();
 
         void setVertex1(int vertex);

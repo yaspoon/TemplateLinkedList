@@ -38,8 +38,6 @@
 		<Unit filename="include/LinkedListNode.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/GraphData.cpp" />
-		<Unit filename="src/LinkedList.cpp" />
-		<Unit filename="src/LinkedListNode.cpp" />
 		<Extensions>
 			<envvars />
 			<code_completion />

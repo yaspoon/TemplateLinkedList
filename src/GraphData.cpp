@@ -7,6 +7,15 @@ GraphData::GraphData()
     weight = 0;
 }
 
+GraphData::GraphData(int inVertex1, int inVertex2, int inWeight)
+{
+    vertex1 = inVertex1;
+    vertex2 = inVertex2;
+    weight = inWeight;
+
+}
+
+
 GraphData::~GraphData()
 {
     //dtor

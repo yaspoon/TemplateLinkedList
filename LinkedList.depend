@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1363492216 source:/home/brock/curtin/2013/ami300/code/LinkedList/main.cpp
+1363697048 source:/home/brock/curtin/2013/ami300/code/LinkedList/main.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -10,14 +10,14 @@
 
 1363448425 /home/brock/curtin/2013/ami300/code/LinkedList/include/GraphData.h
 
-1363491389 source:/home/brock/curtin/2013/ami300/code/LinkedList/src/LinkedListNode.cpp
+1363695405 source:/home/brock/curtin/2013/ami300/code/LinkedList/src/LinkedListNode.cpp
 	"LinkedListNode.h"
 
 1363490878 /home/brock/curtin/2013/ami300/code/LinkedList/include/LinkedListNode.h
 	"GraphData.h"
 	<algorithm>
 
-1363494110 source:/home/brock/curtin/2013/ami300/code/LinkedList/src/LinkedList.cpp
+1363698845 source:/home/brock/curtin/2013/ami300/code/LinkedList/src/LinkedList.cpp
 	"LinkedList.h"
 	<iostream>
 	<fstream>
@@ -26,7 +26,7 @@
 	<string>
 	<sstream>
 
-1363491471 /home/brock/curtin/2013/ami300/code/LinkedList/include/LinkedList.h
+1363494688 /home/brock/curtin/2013/ami300/code/LinkedList/include/LinkedList.h
 	"LinkedListNode.h"
 
 1363693675 source:c:\users\brock\curtin\2013\ami300\code\linkedlist\main.cpp
@@ -58,4 +58,34 @@
 
 1363693675 source:c:\users\brock\curtin\2013\ami300\code\linkedlist\src\linkedlistnode.cpp
 	"LinkedListNode.h"
+
+1363709301 source:/home/brock/curtin/2013/ami300/code/TemplateLinkedList/main.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<sstream>
+	<string>
+	<fstream>
+	"LinkedList.h"
+	"GraphData.h"
+
+1363709011 /home/brock/curtin/2013/ami300/code/TemplateLinkedList/include/LinkedList.h
+	"LinkedListNode.h"
+
+1363708220 /home/brock/curtin/2013/ami300/code/TemplateLinkedList/include/LinkedListNode.h
+	"GraphData.h"
+	<algorithm>
+
+1363705640 /home/brock/curtin/2013/ami300/code/TemplateLinkedList/include/GraphData.h
+
+1363705638 source:/home/brock/curtin/2013/ami300/code/TemplateLinkedList/src/GraphData.cpp
+	"GraphData.h"
+
+1363695405 source:/home/brock/curtin/2013/ami300/code/TemplateLinkedList/src/LinkedListNode.cpp
+	"LinkedListNode.h"
+
+1363703000 source:/home/brock/curtin/2013/ami300/code/TemplateLinkedList/src/LinkedList.cpp
+	"LinkedList.h"
+	<vector>
+	<cstdlib>
 
